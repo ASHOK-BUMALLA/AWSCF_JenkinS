@@ -2,10 +2,8 @@ Resources:
   EC2Instance1:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType:
-        Ref: t2.micro
-      KeyName:
-        Ref: KeyName
+      InstanceType: t2.micro
+      KeyName: NKP
       DisableApiTermination: true
       ImageId: ami-0729e439b6769d6ab
       SubnetId: subnet-06d9804d256388dc4
