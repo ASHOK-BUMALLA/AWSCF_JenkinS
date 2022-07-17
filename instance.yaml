@@ -8,7 +8,6 @@ Parameters:
   MyInstanceType:
     Description: Select the ec2 instance type from SSM
     Type: AWS::SSM::Parameter::Value<String>
-    Default: t2.micro
   VpcId:
     Description: VPC ID for resources
     Type: AWS::SSM::Parameter::Value<AWS::EC2::VPC>
