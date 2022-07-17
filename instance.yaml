@@ -17,15 +17,21 @@ Parameters:
     Description: App EC2 instance type
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Subnet>
     Default: SubnetId
+  ImageID:
+    Description: App EC2 instance type
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::ID>
+    Default: ImageID
 Resources:
   EC2Instance1:
     Type: AWS::EC2::Instance
     Properties:
-      InstanceType: t2.micro
-      KeyName: NKP
-      DisableApiTermination: true
-      ImageId: ami-0729e439b6769d6ab
-      SubnetId: subnet-06d9804d256388dc4
+      InstanceType:
+        Ref: InstanceType
+      KeyName:
+        Ref: KeyName
+      DisableApiTermination: false
+      ImageId: !Ref ImageID
+      SubnetId: !Ref SubnetId
 
 
       
