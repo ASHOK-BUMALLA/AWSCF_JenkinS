@@ -32,6 +32,3 @@ Resources:
       DisableApiTermination: false
       ImageId: !Ref ImageID
       SubnetId: !Ref SubnetId
-
-
-      
