@@ -1,3 +1,22 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: AZ Parameter demo
+
+Parameters:
+  MyKeyName:
+    Description: Select the key name from the list
+    Type: AWS::EC2::KeyPair::KeyName
+  MyInstanceType:
+    Description: Select the ec2 instance type from SSM
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: t2.micro
+  VpcId:
+    Description: VPC ID for resources
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::VPC>
+    Default: VpcId
+  SubnetID:
+    Description: App EC2 instance type
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Subnet>
+    Default: SubnetId
 Resources:
   EC2Instance1:
     Type: AWS::EC2::Instance
