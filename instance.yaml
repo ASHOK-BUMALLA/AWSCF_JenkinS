@@ -20,7 +20,7 @@ Parameters:
   ImageID:
     Description: App EC2 instance type
     Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::ID>
-    Default: ImageID
+    Default: ImageId
 Resources:
   EC2Instance1:
     Type: AWS::EC2::Instance
@@ -30,5 +30,5 @@ Resources:
       KeyName:
         Ref: KeyName
       DisableApiTermination: false
-      ImageId: !Ref ImageID
+      ImageId: !Ref ImageId
       SubnetId: !Ref SubnetId
